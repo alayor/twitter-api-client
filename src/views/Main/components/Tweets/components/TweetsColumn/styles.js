@@ -5,9 +5,11 @@ export const styles = {
         color: 'white',
         border: 'solid white 1px',
         padding: '1em',
-        overflowY: 'scroll'
+        overflowY: 'hidden',
     },
     tweets: {
-
+        overflowY: 'scroll',
+        border: 'solid red 1px',
+        padding: '.5em'
     }
 }
