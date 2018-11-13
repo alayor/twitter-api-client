@@ -4,11 +4,22 @@ import Header from './components/Header'
 import Tweets from './components/Tweets'
 
 class Main extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            isRearranging: false
+        }
+    }
+    switchRearranging = () => {
+        this.setState({
+            isRearranging: !this.isRearranging
+        })
+    }
     render() {
         return (
             <div style={styles.container}>
-                <Header/>
-                <Tweets/>
+                <Header isRearranging={this.state.isRearranging} switchRearranging={this.switchRearranging}/>
+                <Tweets isRearranging={this.state.isRearranging}/>
             </div>
         );
     }

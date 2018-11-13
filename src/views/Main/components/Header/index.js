@@ -6,7 +6,9 @@ class Header extends Component {
         return (
             <div style={styles.container}>
                 <span style={styles.title}>Awesome Twitter Viewer</span>
-                <button style={styles.edit} type="button"> Rearrange Columns </button>
+                <button style={styles.edit} type="button" onClick={this.props.isRearranging}>
+                    {this.props.isRearranging ? 'Done' : 'Rearrange Columns'}
+                </button>
             </div>
         );
     }

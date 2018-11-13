@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {styles} from './styles'
 import TweetsColumn from './components/TweetsColumn'
 import EditColumn from './components/EditColumn'
+import RearrangingColumn from './components/RearrangingColumn'
 
 class Tweets extends Component {
     constructor(props) {
@@ -29,12 +30,12 @@ class Tweets extends Component {
     }
 
     switch = (id) => () => {
-      this.setState({
-          columnsEditing: {
-              ...this.state.columnsEditing,
-              [id]: !this.state.columnsEditing[id]
-          }
-      })
+        this.setState({
+            columnsEditing: {
+                ...this.state.columnsEditing,
+                [id]: !this.state.columnsEditing[id]
+            }
+        })
     }
 
 
@@ -43,9 +44,14 @@ class Tweets extends Component {
             <div style={styles.container}>
                 {
                     this.state.columns.map(
-                        c => this.state.columnsEditing[c.id] ?
-                            <EditColumn switch={this.switch} id={c.id}/> :
-                            <TweetsColumn switch={this.switch} id={c.id}/>
+                        c => {
+                            if (this.props.isRearranging) {
+                                return <RearrangingColumn id={c.id}/>
+                            }
+                            return this.state.columnsEditing[c.id] ?
+                                <EditColumn switch={this.switch} id={c.id}/> :
+                                <TweetsColumn switch={this.switch} id={c.id}/>
+                        }
                     )
                 }
             </div>
