@@ -5,5 +5,7 @@ export const styles = {
         background: 'black',
         color: 'white',
         border: 'solid white 1px',
+        padding: '1em',
+        overflowY: 'scroll'
     },
 }
