@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "npm-run-all --parallel react twitter",
-    "react": "react-scripts start",
+    "react": "PORT=8080 react-scripts start",
     "twitter": "twitter-proxy",
     "build": "react-scripts build",
     "test": "react-scripts test",
