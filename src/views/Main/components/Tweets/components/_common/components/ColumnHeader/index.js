@@ -5,8 +5,8 @@ class Header extends Component {
     render() {
         return (
             <div style={styles.container}>
-                <span style={styles.title}>Awesome Twitter Viewer</span>
-                <button style={styles.edit} type="button"> Rearrange Columns </button>
+                <span style={styles.title}> Name </span>
+                <button style={styles.edit} type="button"> Edit </button>
             </div>
         );
     }
