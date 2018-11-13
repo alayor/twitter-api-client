@@ -4,6 +4,6 @@ export const styles = {
         display: 'flex',
         textAlign: 'center',
         position: 'relative',
-        bottom: '0',
+        height: '100%'
     },
 }

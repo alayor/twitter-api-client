@@ -1,5 +1,6 @@
 export const styles = {
     container: {
+        overflow: 'hidden',
         position: 'absolute',
         top: '0',
         right: '0',
