@@ -1,6 +1,6 @@
 export const styles = {
     container: {
-        flex: '15%',
+        flex: '5%',
         display: 'flex',
         textAlign: 'center',
         background: 'cyan'

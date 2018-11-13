@@ -1,9 +1,6 @@
 export const styles = {
     container: {
-        flex: '75%',
+        flex: '95%',
         display: 'flex',
-        textAlign: 'center',
-        position: 'relative',
-        height: '100%'
     },
 }
