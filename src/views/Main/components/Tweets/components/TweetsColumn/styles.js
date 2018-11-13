@@ -7,6 +7,7 @@ export const styles = {
         color: 'white',
         border: 'solid white 1px',
         padding: '1em',
+        margin: '0.5em'
     },
     tweets: {
         flex: '90%',

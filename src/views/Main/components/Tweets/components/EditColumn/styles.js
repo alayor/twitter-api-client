@@ -5,6 +5,7 @@ export const styles = {
         color: 'white',
         border: 'solid white 1px',
         padding: '1em',
-        overflowY: 'scroll'
+        overflowY: 'scroll',
+        margin: '0.5em'
     },
 }
