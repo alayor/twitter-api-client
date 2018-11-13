@@ -1,6 +1,6 @@
 export const styles = {
     container: {
-        overflow: 'hidden',
+        overflow: 'scroll',
         position: 'absolute',
         top: '0',
         right: '0',
