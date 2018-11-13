@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Tweets from "./views/Main";
 
 class App extends Component {

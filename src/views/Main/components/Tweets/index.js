@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { styles } from './styles'
+import TweetsColumn from './components/TweetsColumn'
 
 class Tweets extends Component {
     render() {
         return (
             <div style={styles.container}>
-               Tweets
+               <TweetsColumn/>
+               <TweetsColumn/>
+               <TweetsColumn/>
             </div>
         );
     }
