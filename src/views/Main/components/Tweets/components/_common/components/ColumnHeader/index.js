@@ -6,7 +6,7 @@ class Header extends Component {
         return (
             <div style={styles.container}>
                 <span style={styles.title}> Name </span>
-                <button style={styles.edit} type="button"> Edit </button>
+                <button style={styles.edit} type="button" onClick={this.props.switch(this.props.id)}> Edit </button>
             </div>
         );
     }

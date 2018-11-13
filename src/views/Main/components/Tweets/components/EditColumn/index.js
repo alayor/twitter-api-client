@@ -6,7 +6,7 @@ class EditColumn extends Component {
     render() {
         return (
             <div style={styles.container}>
-                <ColumnHeader />
+                <ColumnHeader id={this.props.id} switch={this.props.switch}/>
                 <form>
                     <label>Tweets Number</label>
                     <input type="text" value="10"/>

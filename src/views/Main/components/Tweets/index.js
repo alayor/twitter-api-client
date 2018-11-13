@@ -28,11 +28,25 @@ class Tweets extends Component {
         })
     }
 
+    switch = (id) => () => {
+      this.setState({
+          columnsEditing: {
+              ...this.state.columnsEditing,
+              [id]: !this.state.columnsEditing[id]
+          }
+      })
+    }
+
+
     render() {
         return (
             <div style={styles.container}>
                 {
-                    this.state.columns.map(c => this.state.columnsEditing[c.id] ? <EditColumn/> : <TweetsColumn/>)
+                    this.state.columns.map(
+                        c => this.state.columnsEditing[c.id] ?
+                            <EditColumn switch={this.switch} id={c.id}/> :
+                            <TweetsColumn switch={this.switch} id={c.id}/>
+                    )
                 }
             </div>
         )

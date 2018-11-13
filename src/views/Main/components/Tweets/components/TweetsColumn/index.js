@@ -7,7 +7,7 @@ class TweetsColumn extends Component {
     render() {
         return (
             <div style={styles.container}>
-                <div><ColumnHeader /></div>
+                <div><ColumnHeader id={this.props.id} switch={this.props.switch}/></div>
                 <div style={styles.tweets}>
                     <Tweet/>
                     <Tweet/>
