@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {styles} from './styles'
 import time from 'time-ago'
 import moment from 'moment'
+import * as twitterClient from '../../../../../../../../services/twitterClient'
 
 class Tweet extends Component {
     render() {
@@ -13,10 +14,14 @@ class Tweet extends Component {
             dateToDisplay = date.format('hh:mm a - MMM DD')
         }
 
+        const tweetLink = twitterClient.getTweetLink(this.props.tweet.user.id,
+            this.props.tweet.id_str)
+
         return (
             <div style={styles.container}>
                 <div style={styles.text}>{this.props.tweet.text}</div>
                 <div style={styles.date}>{dateToDisplay}</div>
+                <a target="_blank" href={tweetLink}>Link</a>
             </div>
         );
     }
