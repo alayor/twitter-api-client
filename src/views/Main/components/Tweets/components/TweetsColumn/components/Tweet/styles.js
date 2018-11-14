@@ -6,13 +6,14 @@ export const styles = {
         background: 'black',
         color: 'white',
         border: 'solid white 1px',
-        padding: '1em',
+        padding: '0.5em',
         margin: '0.5em'
     },
     text: {
         textAlign: 'left'
     },
     date: {
+        marginTop: '.5em',
         textAlign: 'right'
     }
 }
