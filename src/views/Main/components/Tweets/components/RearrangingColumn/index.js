@@ -5,7 +5,7 @@ class RearrangingColumn extends Component {
     render() {
         return (
             <div style={styles.container} draggable="true">
-                {this.props.id}
+                {this.props.name}
                 {'<- Move ->'}
             </div>
         );
