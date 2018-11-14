@@ -3,13 +3,21 @@ import { styles } from './styles'
 import ColumnHeader from '../_common/components/ColumnHeader'
 
 class EditColumn extends Component {
-
-    getNumberOfTweets = (user) => {
-        return localStorage.getItem(`${user}_numberOfTweets`) || '10'
+    constructor(props) {
+        super(props)
+        this.state = {
+            numberOfTweets: this.getNumberOfTweets(this.props.user)
+        }
     }
 
-    onNumberOfTweetsChange = (user) => () => {
+    getNumberOfTweets = () => {
+        return localStorage.getItem(`${this.props.user}_numberOfTweets`) || '10'
+    }
 
+    onNumberOfTweetsChange = (event) => {
+        this.setState({
+            numberOfTweets: event.target.value
+        })
     }
 
     render() {
@@ -21,8 +29,13 @@ class EditColumn extends Component {
                     user={this.props.user}/>
                 <form>
                     <label>Tweets Number</label>
-                    <select onChange={this.onNumberOfTweetsChange(this.props.user)} value={this.getNumberOfTweets(this.props.user)}>
-
+                    <select onChange={this.onNumberOfTweetsChange} value={this.state.numberOfTweets}>
+                        <option key='5'>5</option>
+                        <option key='10'>10</option>
+                        <option key='15'>15</option>
+                        <option key='20'>20</option>
+                        <option key='25'>25</option>
+                        <option key='30'>30</option>
                     </select>
                 </form>
             </div>
