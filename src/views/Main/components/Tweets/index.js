@@ -14,14 +14,19 @@ class Tweets extends Component {
                 ['2']: false,
                 ['3']: false,
             },
-            columns: []
+            columns: [{
+                id: '0',
+                name: '',
+                tweets: []
+            }]
         }
     }
 
     async componentDidMount() {
-        const makeSchoolTweets = await getTweets(10, 'makeschool')
-        const newsYCombinatorTweets = await getTweets(10, 'newsycombinator')
-        const myCombinatorTweets = await getTweets(10, 'ycombinator')
+        const makeSchoolTweets = await getTweets('makeschool', 10)
+        const newsYCombinatorTweets = await getTweets('newsycombinator', 10)
+        const myCombinatorTweets = await getTweets('ycombinator', 10)
+        debugger
         this.setState({
             columns: [{
                 id: '1',
@@ -56,10 +61,10 @@ class Tweets extends Component {
                     this.state.columns.map(
                         c => {
                             if (this.props.isRearranging) {
-                                return <RearrangingColumn id={c.id}/>
+                                return <RearrangingColumn id={c.id} name={c.name}/>
                             }
                             return this.state.columnsEditing[c.id] ?
-                                <EditColumn switch={this.switch} id={c.id} name={c.name} tweets={c.tweets}/> :
+                                <EditColumn switch={this.switch} id={c.id} name={c.name} /> :
                                 <TweetsColumn switch={this.switch} id={c.id} name={c.name} tweets={c.tweets}/>
                         }
                     )

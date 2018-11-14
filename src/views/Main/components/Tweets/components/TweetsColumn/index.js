@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { styles } from './styles'
+import React, {Component} from 'react';
+import {styles} from './styles'
 import ColumnHeader from '../_common/components/ColumnHeader'
 import Tweet from './components/Tweet'
 
@@ -13,10 +13,7 @@ class TweetsColumn extends Component {
                     switch={this.props.switch}
                     editing={false}/></div>
                 <div style={styles.tweets}>
-                    <Tweet/>
-                    <Tweet/>
-                    <Tweet/>
-                    <Tweet/>
+                    {this.props.tweets.map(t => <Tweet tweet={t}/>)}
                 </div>
             </div>
         );
