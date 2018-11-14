@@ -60,11 +60,11 @@ class Tweets extends Component {
                     this.state.columns.map(
                         c => {
                             if (this.props.isRearranging) {
-                                return <RearrangingColumn id={c.id} name={c.name}/>
+                                return <RearrangingColumn key={c.id} id={c.id} name={c.name}/>
                             }
                             return this.state.columnsEditing[c.id] ?
-                                <EditColumn switch={this.switch} id={c.id} name={c.name} /> :
-                                <TweetsColumn switch={this.switch} id={c.id} name={c.name} tweets={c.tweets}/>
+                                <EditColumn key={c.id} switch={this.switch} id={c.id} name={c.name} /> :
+                                <TweetsColumn key={c.id} switch={this.switch} id={c.id} name={c.name} tweets={c.tweets}/>
                         }
                     )
                 }

@@ -13,7 +13,7 @@ class TweetsColumn extends Component {
                     switch={this.props.switch}
                     editing={false}/></div>
                 <div style={styles.tweets}>
-                    {this.props.tweets.map(t => <Tweet tweet={t}/>)}
+                    {this.props.tweets.map(t => <Tweet key={t.id_str} tweet={t}/>)}
                 </div>
             </div>
         );
