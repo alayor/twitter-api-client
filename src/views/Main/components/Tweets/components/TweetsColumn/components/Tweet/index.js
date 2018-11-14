@@ -8,14 +8,14 @@ class Tweet extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            retweetUsers: []
-
+            retweetUsers: ''
         }
     }
 
     async componentDidMount() {
         const retweets = await twitterClient.getRetweets(this.props.tweet.id_str)
-        const retweetUsers = retweets.map(r => r.user.name)
+        const retweetUsers = retweets.map(r => r.user.name).join()
+
         this.setState({
             retweetUsers
         })
@@ -38,7 +38,7 @@ class Tweet extends Component {
                 <div style={styles.text}>{this.props.tweet.text}</div>
                 <div style={styles.date}>{dateToDisplay}</div>
                 <div style={styles.footer}>
-                    <span style={styles.retweet}>RT {this.props.tweet.retweet_count}</span>
+                    <div title={this.state.retweetUsers} style={styles.retweet}>RT {this.props.tweet.retweet_count}</div>
                     <a style={styles.link} target="_blank" href={tweetLink}>Link</a>
                 </div>
 
