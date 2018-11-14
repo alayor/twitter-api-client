@@ -23,10 +23,9 @@ class Tweets extends Component {
     }
 
     async componentDidMount() {
-        const makeSchoolTweets = await getTweets('makeschool', 10)
-        const newsYCombinatorTweets = await getTweets('newsycombinator', 10)
-        const myCombinatorTweets = await getTweets('ycombinator', 10)
-        debugger
+        const makeSchoolTweets = await getTweets('makeschool', 30)
+        const newsYCombinatorTweets = await getTweets('newsycombinator', 30)
+        const myCombinatorTweets = await getTweets('ycombinator', 30)
         this.setState({
             columns: [{
                 id: '1',

@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "moment": "^2.22.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
-    "twitter-proxy": "^2.0.0",
-    "axios": "^0.18.0"
+    "time-ago": "^0.2.1",
+    "twitter-proxy": "^2.0.0"
   },
   "scripts": {
     "start": "npm-run-all --parallel react twitter",

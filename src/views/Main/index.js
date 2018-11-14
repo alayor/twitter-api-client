@@ -11,7 +11,6 @@ class Main extends Component {
         }
     }
     switchRearranging = () => {
-        debugger
         this.setState({
             isRearranging: !this.state.isRearranging
         })

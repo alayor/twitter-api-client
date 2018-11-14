@@ -9,10 +9,10 @@ export const styles = {
         padding: '1em',
         margin: '0.5em'
     },
-    tweet: {
-        flex: '90%',
-        overflowY: 'scroll',
-        border: 'solid red 1px',
-        padding: '.5em'
+    text: {
+        textAlign: 'left'
+    },
+    date: {
+        textAlign: 'right'
     }
 }
