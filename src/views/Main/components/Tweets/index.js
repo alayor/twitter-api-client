@@ -3,6 +3,7 @@ import {styles} from './styles'
 import TweetsColumn from './components/TweetsColumn'
 import EditColumn from './components/EditColumn'
 import RearrangingColumn from './components/RearrangingColumn'
+import { getTweets } from "../../../../services/twitterClient";
 
 class Tweets extends Component {
     constructor(props) {
@@ -17,14 +18,23 @@ class Tweets extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+        const makeSchoolTweets = await getTweets(10, 'makeschool')
+        const newsYCombinatorTweets = await getTweets(10, 'newsycombinator')
+        const myCombinatorTweets = await getTweets(10, 'ycombinator')
         this.setState({
             columns: [{
-                id: '1'
+                id: '1',
+                name: '@makeschool',
+                tweets: makeSchoolTweets
             }, {
-                id: '2'
+                id: '2',
+                name: '@newsycombinator',
+                tweets: newsYCombinatorTweets
             }, {
-                id: '3'
+                id: '3',
+                name: '@ycombinator',
+                tweets: myCombinatorTweets
             }]
         })
     }
@@ -49,8 +59,8 @@ class Tweets extends Component {
                                 return <RearrangingColumn id={c.id}/>
                             }
                             return this.state.columnsEditing[c.id] ?
-                                <EditColumn switch={this.switch} id={c.id}/> :
-                                <TweetsColumn switch={this.switch} id={c.id}/>
+                                <EditColumn switch={this.switch} id={c.id} name={c.name} tweets={c.tweets}/> :
+                                <TweetsColumn switch={this.switch} id={c.id} name={c.name} tweets={c.tweets}/>
                         }
                     )
                 }
