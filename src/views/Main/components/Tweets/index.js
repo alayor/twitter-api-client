@@ -24,7 +24,7 @@ class Tweets extends Component {
                 columns: [
                     ...this.state.columns,
                     {
-                        name: user,
+                        user,
                         tweets: tweets
                     }
                 ]
@@ -34,7 +34,7 @@ class Tweets extends Component {
 
     getNumberOfTweets = (user) => {
         let numberOfTweets = localStorage.getItem(`${user}_numberOfTweets`)
-        if (numberOfTweets) {
+        if (!numberOfTweets) {
             numberOfTweets = '10'
             localStorage.setItem(`${user}_numberOfTweets`, numberOfTweets)
         }
@@ -42,11 +42,11 @@ class Tweets extends Component {
         return Number(numberOfTweets)
     }
 
-    switch = (name) => () => {
+    switch = (user) => () => {
         this.setState({
             columnsEditing: {
                 ...this.state.columnsEditing,
-                [name]: !this.state.columnsEditing[name]
+                [user]: !this.state.columnsEditing[user]
             }
         })
     }
@@ -59,11 +59,11 @@ class Tweets extends Component {
                     this.state.columns.map(
                         c => {
                             if (this.props.isRearranging) {
-                                return <RearrangingColumn key={c.name} name={c.name}/>
+                                return <RearrangingColumn key={c.user} user={c.user}/>
                             }
-                            return this.state.columnsEditing[c.name] ?
-                                <EditColumn key={c.name} switch={this.switch} name={c.name} /> :
-                                <TweetsColumn key={c.name} switch={this.switch} name={c.name} tweets={c.tweets}/>
+                            return this.state.columnsEditing[c.user] ?
+                                <EditColumn key={c.user} switch={this.switch} user={c.user} /> :
+                                <TweetsColumn key={c.user} switch={this.switch} user={c.user} tweets={c.tweets}/>
                         }
                     )
                 }

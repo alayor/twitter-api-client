@@ -5,9 +5,9 @@ class Header extends Component {
     render() {
         return (
             <div style={styles.container}>
-                <span style={styles.title}> {this.props.name} </span>
+                <span style={styles.title}> {this.props.user} </span>
                 <button style={styles.edit} type="button"
-                        onClick={this.props.switch(this.props.name)}> {this.props.editing ? 'Save' : 'Edit'} </button>
+                        onClick={this.props.switch(this.props.user)}> {this.props.editing ? 'Save' : 'Edit'} </button>
             </div>
         );
     }
