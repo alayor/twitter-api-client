@@ -10,25 +10,25 @@ class Tweets extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            columnsEditing: {
-            },
-            columns: []
+            columnsEditing: {},
+            columns: {}
         }
     }
 
     async componentDidMount() {
         const twitterUsers = ['makeschool', 'newsycombinator', 'ycombinator']
-        await Bluebird.map(twitterUsers, async user => {
-            const tweets = await getTweets(user, this.getNumberOfTweets(user))
-            this.setState({
-                columns: [
-                    ...this.state.columns,
-                    {
-                        user,
-                        tweets: tweets
-                    }
-                ]
-            })
+        await Bluebird.map(twitterUsers, async user => this.updateTweets(user))
+    }
+
+    updateTweets = async (user) => {
+        const tweets = await getTweets(user, this.getNumberOfTweets(user))
+        this.setState({
+            columns: {
+                ...this.state.columns,
+                [user]: {
+                    tweets
+                }
+            }
         })
     }
 
@@ -43,6 +43,7 @@ class Tweets extends Component {
     }
 
     switch = (user) => () => {
+        this.state.columnsEditing[user] && this.updateTweets(user)
         this.setState({
             columnsEditing: {
                 ...this.state.columnsEditing,
@@ -56,14 +57,14 @@ class Tweets extends Component {
         return (
             <div style={styles.container}>
                 {
-                    this.state.columns.map(
-                        c => {
+                    Object.keys(this.state.columns).map(
+                        user => {
                             if (this.props.isRearranging) {
-                                return <RearrangingColumn key={c.user} user={c.user}/>
+                                return <RearrangingColumn key={user} user={user}/>
                             }
-                            return this.state.columnsEditing[c.user] ?
-                                <EditColumn key={c.user} switch={this.switch} user={c.user} /> :
-                                <TweetsColumn key={c.user} switch={this.switch} user={c.user} tweets={c.tweets}/>
+                            return this.state.columnsEditing[user] ?
+                                <EditColumn key={user} switch={this.switch} user={user} /> :
+                                <TweetsColumn key={user} switch={this.switch} user={user} tweets={this.state.columns[user].tweets}/>
                         }
                     )
                 }

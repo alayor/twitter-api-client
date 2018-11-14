@@ -21,7 +21,7 @@ class EditColumn extends Component {
     }
 
     onSave = () => {
-
+        localStorage.setItem(`${this.props.user}_numberOfTweets`, this.state.numberOfTweets)
         this.props.switch(this.props.user)()
     }
 
