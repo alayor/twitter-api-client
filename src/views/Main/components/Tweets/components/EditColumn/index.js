@@ -20,13 +20,20 @@ class EditColumn extends Component {
         })
     }
 
+    onSave = () => {
+
+        this.props.switch(this.props.user)()
+    }
+
     render() {
         return (
             <div style={styles.container}>
                 <ColumnHeader
                     switch={this.props.switch}
                     editing={true}
-                    user={this.props.user}/>
+                    user={this.props.user}
+                    onButtonClick={this.onSave}
+                />
                 <form>
                     <label>Tweets Number</label>
                     <select onChange={this.onNumberOfTweetsChange} value={this.state.numberOfTweets}>

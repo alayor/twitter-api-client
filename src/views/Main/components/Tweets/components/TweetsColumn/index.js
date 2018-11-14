@@ -10,7 +10,8 @@ class TweetsColumn extends Component {
                 <div><ColumnHeader
                     user={this.props.user}
                     switch={this.props.switch}
-                    editing={false}/></div>
+                    editing={false}
+                    onButtonClick={this.props.switch(this.props.user)}/></div>
                 <div style={styles.tweets}>
                     {this.props.tweets.map(t => <Tweet key={t.id_str} tweet={t}/>)}
                 </div>
