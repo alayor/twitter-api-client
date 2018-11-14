@@ -1,6 +1,7 @@
 import React from 'react'
 import {styles} from './styles'
 import Modal from 'react-modal'
+import * as twitterClient from '../../../../../../../../../../services/twitterClient'
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root')
@@ -8,20 +9,27 @@ Modal.setAppElement('#root')
 class Retweets extends React.Component {
     constructor() {
         super()
+        this.state = {
+            retweets: []
+        }
+    }
+
+    async componentDidMount() {
+        const retweets = await twitterClient.getRetweets(this.props.tweetId)
+        this.setState({retweets})
     }
 
     render() {
         return (
             <div>
                 <Modal
-                    isOpen={this.props.isModalOpen}
+                    isOpen={true}
                     style={styles.modal}
-                    contentLabel="Retweets"
-                >
-
-                    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+                    contentLabel="Retweets">
                     <button onClick={this.props.onClose}>close</button>
-                    <div>I am a modal</div>
+                    <div>
+                        {this.state.retweets.map(r => r.user.name)}
+                    </div>
 
                 </Modal>
             </div>

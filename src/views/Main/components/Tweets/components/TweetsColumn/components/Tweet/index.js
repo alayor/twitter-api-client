@@ -13,11 +13,6 @@ class Tweet extends Component {
         }
     }
 
-    async componentDidMount() {
-        // const retweets = await twitterClient.getRetweets(this.props.tweet.id_str)
-        // const retweetUsers = retweets.map(r => r.user.name).join()
-    }
-
     showRetweetsModal = () => {
         this.setState({
             retweetModalIsOpen: true
@@ -56,8 +51,11 @@ class Tweet extends Component {
                     </button>
                     <a style={styles.link} target="_blank" href={tweetLink}>Link</a>
                 </div>
-                <Retweets isModalOpen={this.state.retweetModalIsOpen}
-                onClose={this.closeRetweetsModal}/>
+                {this.state.retweetModalIsOpen &&
+                <Retweets
+                    onClose={this.closeRetweetsModal}
+                    tweetId={this.props.tweet.id_str}
+                />}
             </div>
         );
     }
