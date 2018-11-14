@@ -15,5 +15,15 @@ export const styles = {
     date: {
         marginTop: '.5em',
         textAlign: 'right'
+    },
+    footer: {
+        display: 'flex'
+    },
+    link: {
+        flex: '20%'
+    },
+    retweet: {
+        flex: '80%'
     }
+
 }

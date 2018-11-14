@@ -21,7 +21,11 @@ class Tweet extends Component {
             <div style={styles.container}>
                 <div style={styles.text}>{this.props.tweet.text}</div>
                 <div style={styles.date}>{dateToDisplay}</div>
-                <a target="_blank" href={tweetLink}>Link</a>
+                <div style={styles.footer}>
+                    <span style={styles.retweet}>RT {this.props.tweet.retweet_count}</span>
+                    <a style={styles.link} target="_blank" href={tweetLink}>Link</a>
+                </div>
+
             </div>
         );
     }
