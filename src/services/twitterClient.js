@@ -6,6 +6,13 @@ export async function getTweets(account, count) {
     return response.data
 }
 
+export async function getRetweets(id) {
+    const request = `http://localhost:7890/1.1/statuses/retweets/${id}`
+    const response = await apiRequester.send(request)
+
+    return response.data
+}
+
 export function getTweetLink(userId, id) {
     return `https://twitter.com/${userId}/status/${id}`
 }
