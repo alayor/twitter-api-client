@@ -1,9 +1,8 @@
 import React from 'react'
 import {styles} from './styles'
 import Modal from 'react-modal'
-import * as twitterClient from '../../../../../../../../../../services/twitterClient'
+import * as twitterClient from 'services/twitterClient'
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root')
 
 class Retweets extends React.Component {

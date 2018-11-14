@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {styles} from './styles'
 import time from 'time-ago'
 import moment from 'moment'
-import * as twitterClient from '../../../../../../../../services/twitterClient'
+import * as twitterClient from 'services/twitterClient'
 import Retweets from './components/Retweets'
 
 class Tweet extends Component {

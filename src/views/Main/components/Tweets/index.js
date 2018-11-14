@@ -3,7 +3,7 @@ import {styles} from './styles'
 import TweetsColumn from './components/TweetsColumn'
 import EditColumn from './components/EditColumn'
 import RearrangingColumn from './components/RearrangingColumn'
-import { getTweets } from "../../../../services/twitterClient";
+import { getTweets } from "services/twitterClient";
 
 class Tweets extends Component {
     constructor(props) {
