@@ -3,21 +3,30 @@ import {styles} from './styles'
 import time from 'time-ago'
 import moment from 'moment'
 import * as twitterClient from '../../../../../../../../services/twitterClient'
+import Retweets from './components/Retweets'
 
 class Tweet extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            retweetUsers: ''
+            retweetModalIsOpen: false
         }
     }
 
     async componentDidMount() {
-        const retweets = await twitterClient.getRetweets(this.props.tweet.id_str)
-        const retweetUsers = retweets.map(r => r.user.name).join()
+        // const retweets = await twitterClient.getRetweets(this.props.tweet.id_str)
+        // const retweetUsers = retweets.map(r => r.user.name).join()
+    }
 
+    showRetweetsModal = () => {
         this.setState({
-            retweetUsers
+            retweetModalIsOpen: true
+        })
+    }
+
+    closeRetweetsModal = () => {
+        this.setState({
+            retweetModalIsOpen: false
         })
     }
 
@@ -38,10 +47,17 @@ class Tweet extends Component {
                 <div style={styles.text}>{this.props.tweet.text}</div>
                 <div style={styles.date}>{dateToDisplay}</div>
                 <div style={styles.footer}>
-                    <div title={this.state.retweetUsers} style={styles.retweet}>RT {this.props.tweet.retweet_count}</div>
+                    <button
+                        type='button'
+                        style={styles.retweet}
+                        onClick={this.showRetweetsModal}
+                    >
+                        RT {this.props.tweet.retweet_count}
+                    </button>
                     <a style={styles.link} target="_blank" href={tweetLink}>Link</a>
                 </div>
-
+                <Retweets isModalOpen={this.state.retweetModalIsOpen}
+                onClose={this.closeRetweetsModal}/>
             </div>
         );
     }
