@@ -8,7 +8,6 @@ class TweetsColumn extends Component {
         return (
             <div style={styles.container}>
                 <div><ColumnHeader
-                    id={this.props.id}
                     name={this.props.name}
                     switch={this.props.switch}
                     editing={false}/></div>

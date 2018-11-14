@@ -7,7 +7,6 @@ class EditColumn extends Component {
         return (
             <div style={styles.container}>
                 <ColumnHeader
-                    id={this.props.id}
                     switch={this.props.switch}
                     editing={true}
                     name={this.props.name}/>
