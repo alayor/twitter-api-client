@@ -1,8 +1,15 @@
 export const styles = {
     container: {
-
+        marginBottom: '1em',
+        marginLeft: '1em'
     },
     label: {
-      marginRight: '2em'
+
+    },
+    tweetsLabel: {
+
+    },
+    select: {
+        fontSize: '1.2em'
     }
 }

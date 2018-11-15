@@ -40,14 +40,16 @@ class EditColumn extends Component {
                     user={this.props.user}
                     onButtonClick={this.onSave}
                 />
-                <NumberOfTweets
-                    onNumberOfTweetsChange={this.onNumberOfTweetsChange}
-                    numberOfTweets={this.state.numberOfTweets}
-                />
-                <Since
-                    onSinceChange={this.onSinceChange}
-                    since={this.state.since}
-                />
+                <div style={styles.form}>
+                    <NumberOfTweets
+                        onNumberOfTweetsChange={this.onNumberOfTweetsChange}
+                        numberOfTweets={this.state.numberOfTweets}
+                    />
+                    <Since
+                        onSinceChange={this.onSinceChange}
+                        since={this.state.since}
+                    />
+                </div>
             </div>
         );
     }

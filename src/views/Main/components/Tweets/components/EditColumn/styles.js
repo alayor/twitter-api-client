@@ -5,6 +5,14 @@ export const styles = {
         border: 'solid black 2px',
         padding: '1em',
         overflowY: 'scroll',
-        margin: '0.5em'
+        margin: '0.5em',
+
     },
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    numberOfTweets: {
+        marginBottom: '12em'
+    }
 }

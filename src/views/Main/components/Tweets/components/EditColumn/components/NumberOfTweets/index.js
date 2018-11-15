@@ -6,8 +6,8 @@ class NumberOfTweets extends Component {
         return (
             <div style={styles.container}>
                 <form>
-                    <label style={styles.label}>Tweets Number</label>
-                    <select onChange={this.props.onNumberOfTweetsChange} value={this.props.numberOfTweets}>
+                    <label style={styles.label}>Show max </label>
+                    <select style={styles.select} onChange={this.props.onNumberOfTweetsChange} value={this.props.numberOfTweets}>
                         <option key='5' value='5'>5</option>
                         <option key='10' value='10'>10</option>
                         <option key='15' value='15'>15</option>
@@ -15,6 +15,7 @@ class NumberOfTweets extends Component {
                         <option key='25' value='25'>25</option>
                         <option key='30' value='30'>30</option>
                     </select>
+                    <label style={styles.tweetsLabel}> tweets </label>
                 </form>
             </div>
         );
