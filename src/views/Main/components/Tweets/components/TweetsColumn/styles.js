@@ -11,7 +11,6 @@ export const styles = {
     tweets: {
         flex: '90%',
         overflowY: 'scroll',
-        border: 'solid red 1px',
         padding: '.5em'
     }
 }

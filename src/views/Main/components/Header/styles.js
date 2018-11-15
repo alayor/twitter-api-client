@@ -3,7 +3,7 @@ export const styles = {
         flex: '5%',
         display: 'flex',
         textAlign: 'center',
-        background: 'cyan'
+        background: '#acdeff'
     },
     title: {
         flex: '90%',
