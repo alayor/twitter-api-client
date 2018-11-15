@@ -4,7 +4,7 @@ import {styles} from './styles'
 import TweetsColumn from './components/TweetsColumn'
 import EditColumn from './components/EditColumn'
 import RearrangingColumn from './components/RearrangingColumn'
-import { getTweets } from "services/twitterClient"
+import {getTweets} from "services/twitterClient"
 
 class Tweets extends Component {
     constructor(props) {
@@ -32,6 +32,19 @@ class Tweets extends Component {
         })
     }
 
+    swap = (user1, user2) => {
+        const index1 = this.state.columns.indexOf(user1)
+        const index2 = this.state.columns.indexOf(user2)
+        const columns = this.state.columns.map((c, id) =>
+            (id === index1) ? this.state.columns[index2] :
+                (id === index2) ? this.state.columns[index1] : c
+        )
+
+        this.setState({
+            columns
+        })
+    }
+
     switch = (user) => () => {
         this.state.columnsEditing[user] && this.updateTweets(user)
         this.setState({
@@ -53,11 +66,12 @@ class Tweets extends Component {
                                 return
                             }
                             if (this.props.isRearranging) {
-                                return <RearrangingColumn key={user} user={user}/>
+                                return <RearrangingColumn swap={this.swap} key={user} user={user}/>
                             }
                             return this.state.columnsEditing[user] ?
-                                <EditColumn key={user} switch={this.switch} user={user} /> :
-                                <TweetsColumn key={user} switch={this.switch} user={user} tweets={this.state.users[user].tweets}/>
+                                <EditColumn key={user} switch={this.switch} user={user}/> :
+                                <TweetsColumn key={user} switch={this.switch} user={user}
+                                              tweets={this.state.users[user].tweets}/>
                         }
                     )
                 }

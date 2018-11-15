@@ -13,7 +13,7 @@ class RearrangingColumn extends Component {
     onDrop = (event) => {
         const source = event.dataTransfer.getData("user")
         const destination = this.props.user
-
+        this.props.swap(source, destination)
     }
     allowDrop = (event) => {
         event.preventDefault()
