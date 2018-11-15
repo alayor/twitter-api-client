@@ -6,7 +6,7 @@ class NumberOfTweets extends Component {
         return (
             <div style={styles.container}>
                 <form>
-                    <label>Tweets Number</label>
+                    <label style={styles.label}>Tweets Number</label>
                     <select onChange={this.props.onNumberOfTweetsChange} value={this.props.numberOfTweets}>
                         <option key='5' value='5'>5</option>
                         <option key='10' value='10'>10</option>
