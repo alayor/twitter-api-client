@@ -18,4 +18,8 @@ export const styles = {
         flex: '20%',
         cursor: 'pointer'
     },
+    save: {
+        fontWeight: 'bold',
+        fontSize: '1.2em'
+    }
 }

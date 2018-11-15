@@ -7,7 +7,7 @@ class Since extends Component {
         return (
             <div style={styles.container}>
                 <form>
-                    <label style={styles.label}>Show tweets for the</label>
+                    <label style={styles.label}>for the</label>
                     <select style={styles.select} onChange={this.props.onSinceChange} value={this.props.since}>
                         <option key='60' value='60'>Last hour</option>
                         <option key='360' value='360'>Last 6 hours</option>

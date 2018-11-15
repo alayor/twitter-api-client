@@ -8,7 +8,7 @@ export const styles = {
         flex: '75%',
         background: '#acdeff',
         color: 'black',
-        border: 'solid white 1px',
+        border: 'solid black 2px',
         padding: '0.5em',
         margin: '0.5em',
         borderRadius: '15px'
