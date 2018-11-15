@@ -11,7 +11,9 @@ export const styles = {
         borderRadius: '15px'
     },
     text: {
-        textAlign: 'left'
+        textAlign: 'left',
+        textDecoration: 'none',
+        color: 'inherit'
     },
     footer: {
         display: 'flex'

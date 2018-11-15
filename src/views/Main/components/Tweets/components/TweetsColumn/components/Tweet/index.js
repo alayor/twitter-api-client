@@ -27,13 +27,11 @@ class Tweet extends Component {
     }
 
     render() {
-        const text = this.props.tweet.text.substr(0, this.props.tweet.text.indexOf('http'))
-        const link = this.props.tweet.text.substr(this.props.tweet.text.indexOf('http'))
+        const tweetLink = twitterClient.getTweetLink(this.props.tweet.user.id, this.props.tweet.id_str)
         return (
             <div style={styles.container}>
-                <div style={styles.text}>
-                    {text}
-                    <a target="_blank" href={link}>{link}</a>
+                <div>
+                    <a style={styles.text} target="_blank" href={tweetLink}>{this.props.tweet.text}</a>
                 </div>
                 <Date createdAt={this.props.tweet.created_at}/>
                 <div style={styles.footer}>
