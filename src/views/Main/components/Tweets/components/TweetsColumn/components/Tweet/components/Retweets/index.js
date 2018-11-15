@@ -9,13 +9,13 @@ class Retweets extends React.Component {
     constructor() {
         super()
         this.state = {
-            retweets: []
+            retweeters: []
         }
     }
 
     async componentDidMount() {
-        const retweets = await twitterClient.getRetweets(this.props.tweetId)
-        this.setState({retweets})
+        const retweeters = await twitterClient.getRetweeters(this.props.tweetId)
+        this.setState({retweeters})
     }
 
     render() {
@@ -27,7 +27,7 @@ class Retweets extends React.Component {
                     contentLabel="Retweets">
                     <button onClick={this.props.onClose}>close</button>
                     <div>
-                        {this.state.retweets.map(r => r.user.name)}
+                        {this.state.retweeters.map(r => r.screen_name + ', ')}
                     </div>
 
                 </Modal>
