@@ -13,10 +13,6 @@ export const styles = {
     text: {
         textAlign: 'left'
     },
-    date: {
-        marginTop: '.5em',
-        textAlign: 'right'
-    },
     footer: {
         display: 'flex'
     },
