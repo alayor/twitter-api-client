@@ -7,10 +7,10 @@ class Header extends Component {
             <div style={styles.container}>
                 <div style={styles.space}> </div>
                 <span style={styles.title}>Awesome Twitter Viewer</span>
-                <button style={styles.edit} type="button" onClick={this.props.switchNightMode}>
+                <button style={styles.nightMode} type="button" onClick={this.props.switchNightMode}>
                     {this.props.nightMode ? 'Day' : 'Night'}
                 </button>
-                <button style={styles.edit} type="button" onClick={this.props.switchRearranging}>
+                <button style={styles.rearranging} type="button" onClick={this.props.switchRearranging}>
                     {this.props.isRearranging ?
                         <span style={styles.done}>Done</span> :
                         <span>Rearrange Columns</span>}

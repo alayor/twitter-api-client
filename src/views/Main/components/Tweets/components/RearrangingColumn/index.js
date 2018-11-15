@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {styles} from './styles'
+import ColumnHeader from "../_common/components/ColumnHeader";
 
 class RearrangingColumn extends Component {
     constructor(props) {
@@ -38,7 +39,10 @@ class RearrangingColumn extends Component {
                  onDrop={e => this.onDrop(e)}
                  onDragOver={this.allowDrop}
                  onDragEnd={e => this.onDragEnd(e)}>
-                {'<-- '}{this.props.user}{' -->'}
+                <div><ColumnHeader
+                    user={this.props.user}
+                    switch={this.props.switch}
+                    editing={false}/></div>
             </div>
         );
     }

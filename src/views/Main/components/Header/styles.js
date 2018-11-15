@@ -10,18 +10,23 @@ export const styles = {
         paddingLeft: '.5em'
     },
     space: {
-        flex: '20%',
+        flex: '22%',
     },
     title: {
-        flex: '60%',
+        flex: '58%',
     },
-    edit: {
-        flex: '10%',
+    rearranging: {
+        flex: '12%',
+        cursor: 'pointer',
+        marginRight: '1em',
+    },
+    nightMode: {
+        flex: '8%',
         cursor: 'pointer',
         marginRight: '1em',
     },
     done: {
-        flex: '10%',
+        flex: '8%',
         fontWeight: 'bold',
         fontSize: '1.2em'
     },
