@@ -6,11 +6,15 @@ export const styles = {
         background: 'gray',
         marginBottom: '1em'
     },
+    image: {
+        flex: '20%',
+        padding: '0.5em'
+    },
     title: {
         flex: '60%',
         padding: '0.5em'
     },
     edit: {
-        flex: '40%'
+        flex: '20%'
     },
 }

@@ -15,8 +15,8 @@ export const styles = {
         textDecoration: 'none',
         color: 'inherit'
     },
-    footer: {
-        display: 'flex'
+    retweets: {
+        fontSize: '.8em'
     },
     link: {
         flex: '20%'
