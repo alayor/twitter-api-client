@@ -10,6 +10,7 @@ export const styles = {
         padding: '0.5em'
     },
     edit: {
-        flex: '10%'
+        flex: '10%',
+        cursor: 'pointer'
     },
 }

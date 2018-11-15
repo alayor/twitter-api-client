@@ -3,7 +3,7 @@ export const styles = {
         flex: '15%',
         display: 'flex',
         textAlign: 'center',
-        background: 'gray',
+        background: '#25aa3d',
         marginBottom: '1em'
     },
     image: {
@@ -15,6 +15,7 @@ export const styles = {
         padding: '0.5em'
     },
     edit: {
-        flex: '20%'
+        flex: '20%',
+        cursor: 'pointer'
     },
 }
