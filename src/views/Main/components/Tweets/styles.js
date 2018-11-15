@@ -3,5 +3,6 @@ export const styles = {
         flex: '95%',
         display: 'flex',
         background: '#F5F5F5',
+
     },
 }

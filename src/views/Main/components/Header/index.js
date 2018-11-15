@@ -5,6 +5,7 @@ class Header extends Component {
     render() {
         return (
             <div style={styles.container}>
+                <div style={styles.space}> </div>
                 <span style={styles.title}>Awesome Twitter Viewer</span>
                 <button style={styles.edit} type="button" onClick={this.props.switchNightMode}>
                     {this.props.nightMode ? 'Day' : 'Night'}
