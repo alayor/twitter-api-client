@@ -8,7 +8,6 @@
     "moment": "^2.22.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-modal": "^3.6.1",
     "react-scripts": "2.1.1",
     "time-ago": "^0.2.1",
     "twitter-proxy": "^2.0.0"

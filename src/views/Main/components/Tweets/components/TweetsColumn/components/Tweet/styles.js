@@ -25,7 +25,8 @@ export const styles = {
         flex: '50%',
         marginTop: '.6em',
         fontSize: '.8em',
-        fontFamily: 'serif'
+        fontFamily: 'serif',
+        cursor: 'pointer'
     }
 
 }
