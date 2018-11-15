@@ -21,7 +21,7 @@ class Tweets extends Component {
     }
 
     updateTweets = async (user) => {
-        const tweets = await getTweets(user, this.getNumberOfTweets(user))
+        const tweets = await getTweets(user)
         this.setState({
             columns: {
                 ...this.state.columns,
@@ -32,15 +32,7 @@ class Tweets extends Component {
         })
     }
 
-    getNumberOfTweets = (user) => {
-        let numberOfTweets = localStorage.getItem(`${user}_numberOfTweets`)
-        if (!numberOfTweets) {
-            numberOfTweets = '10'
-            localStorage.setItem(`${user}_numberOfTweets`, numberOfTweets)
-        }
 
-        return Number(numberOfTweets)
-    }
 
     switch = (user) => () => {
         this.state.columnsEditing[user] && this.updateTweets(user)
