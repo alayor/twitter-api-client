@@ -1,6 +1,7 @@
 export const styles = {
     container: {
         marginTop: '.5em',
-        textAlign: 'right'
+        textAlign: 'right',
+        fontStyle: 'italic'
     },
 }

@@ -6,7 +6,7 @@ class Header extends Component {
         return (
             <div style={styles.container}>
                 <img style={styles.image} src={this.props.user.profile_image_url}/>
-                <span style={styles.title}> {this.props.user} </span>
+                <span style={styles.title}> @{this.props.user} </span>
                 <button style={styles.edit} type="button"
                         onClick={this.props.onButtonClick}>
                     {this.props.editing ? <span style={styles.save}>Save</span> : <span>Edit</span> }
