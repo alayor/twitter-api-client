@@ -7,11 +7,13 @@ class RearrangingColumn extends Component {
         this.drag = this.drag.bind(this);
         this.onDrop = this.onDrop.bind(this);
     }
-    drag = (event, user) => {
+    drag = (event) => {
         event.dataTransfer.setData("user", this.props.user)
     }
-    onDrop = (event, user) => {
-        event.dataTransfer.getData("user")
+    onDrop = (event) => {
+        const source = event.dataTransfer.getData("user")
+        const destination = this.props.user
+
     }
     allowDrop = (event) => {
         event.preventDefault()
@@ -20,8 +22,8 @@ class RearrangingColumn extends Component {
         return (
             <div style={styles.container}
                  draggable={true}
-                 onDragStart={e => this.drag(e, this.props.user)}
-                 onDrop={e => this.onDrop(e, this.props.user)}
+                 onDragStart={e => this.drag(e)}
+                 onDrop={e => this.onDrop(e)}
                  onDragOver={this.allowDrop}>
                 {'<-- '}{this.props.user}{' -->'}
             </div>

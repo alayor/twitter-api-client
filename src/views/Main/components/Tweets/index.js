@@ -11,7 +11,8 @@ class Tweets extends Component {
         super(props)
         this.state = {
             columnsEditing: {},
-            columns: {}
+            users: {},
+            columns: [],
         }
     }
 
@@ -23,8 +24,8 @@ class Tweets extends Component {
     updateTweets = async (user) => {
         const tweets = await getTweets(user)
         this.setState({
-            columns: {
-                ...this.state.columns,
+            users: {
+                ...this.state.users,
                 [user]: {
                     tweets
                 }
@@ -49,14 +50,14 @@ class Tweets extends Component {
         return (
             <div style={styles.container}>
                 {
-                    Object.keys(this.state.columns).map(
+                    Object.keys(this.state.users).map(
                         user => {
                             if (this.props.isRearranging) {
                                 return <RearrangingColumn key={user} user={user}/>
                             }
                             return this.state.columnsEditing[user] ?
                                 <EditColumn key={user} switch={this.switch} user={user} /> :
-                                <TweetsColumn key={user} switch={this.switch} user={user} tweets={this.state.columns[user].tweets}/>
+                                <TweetsColumn key={user} switch={this.switch} user={user} tweets={this.state.users[user].tweets}/>
                         }
                     )
                 }
