@@ -6,6 +6,9 @@ class Header extends Component {
         return (
             <div style={styles.container}>
                 <span style={styles.title}>Awesome Twitter Viewer</span>
+                <button style={styles.edit} type="button" onClick={this.props.switchNightMode}>
+                    {this.props.nightMode ? 'Day' : 'Night'}
+                </button>
                 <button style={styles.edit} type="button" onClick={this.props.switchRearranging}>
                     {this.props.isRearranging ? 'Done' : 'Rearrange Columns'}
                 </button>
