@@ -27,12 +27,14 @@ class Tweet extends Component {
     }
 
     render() {
-        const tweetLink = twitterClient.getTweetLink(this.props.tweet.user.id,
-            this.props.tweet.id_str)
-
+        const text = this.props.tweet.text.substr(0, this.props.tweet.text.indexOf('http'))
+        const link = this.props.tweet.text.substr(this.props.tweet.text.indexOf('http'))
         return (
             <div style={styles.container}>
-                <div style={styles.text}>{this.props.tweet.text}</div>
+                <div style={styles.text}>
+                    {text}
+                    <a target="_blank" href={link}>{link}</a>
+                </div>
                 <Date createdAt={this.props.tweet.created_at}/>
                 <div style={styles.footer}>
                     <button
@@ -41,7 +43,7 @@ class Tweet extends Component {
                         onClick={this.showRetweetsModal}>
                         RT {this.props.tweet.retweet_count}
                     </button>
-                    <a style={styles.link} target="_blank" href={tweetLink}>Link</a>
+
                 </div>
                 {this.state.retweetModalIsOpen &&
                 <Retweets
