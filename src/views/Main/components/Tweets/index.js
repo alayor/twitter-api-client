@@ -12,13 +12,12 @@ class Tweets extends Component {
         this.state = {
             columnsEditing: {},
             users: {},
-            columns: [],
+            columns: ['newsycombinator', 'makeschool', 'ycombinator'],
         }
     }
 
     async componentDidMount() {
-        const twitterUsers = ['makeschool', 'newsycombinator', 'ycombinator']
-        await Bluebird.map(twitterUsers, async user => this.updateTweets(user))
+        await Bluebird.map(this.state.columns, async user => this.updateTweets(user))
     }
 
     updateTweets = async (user) => {
@@ -32,8 +31,6 @@ class Tweets extends Component {
             }
         })
     }
-
-
 
     switch = (user) => () => {
         this.state.columnsEditing[user] && this.updateTweets(user)
@@ -50,8 +47,11 @@ class Tweets extends Component {
         return (
             <div style={styles.container}>
                 {
-                    Object.keys(this.state.users).map(
+                    this.state.columns.map(
                         user => {
+                            if (!this.state.users[user]) {
+                                return
+                            }
                             if (this.props.isRearranging) {
                                 return <RearrangingColumn key={user} user={user}/>
                             }
