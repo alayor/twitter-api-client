@@ -15,14 +15,17 @@ export const styles = {
         textDecoration: 'none',
         color: 'inherit'
     },
-    retweets: {
-        fontSize: '.8em'
+    footer: {
+       display: 'flex',
     },
-    link: {
-        flex: '20%'
+    date: {
+        flex: '50%'
     },
     retweet: {
-        flex: '80%'
+        flex: '50%',
+        marginTop: '.6em',
+        fontSize: '.8em',
+        fontFamily: 'serif'
     }
 
 }

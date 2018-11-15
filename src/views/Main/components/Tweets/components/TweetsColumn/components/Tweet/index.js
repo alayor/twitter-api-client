@@ -33,16 +33,13 @@ class Tweet extends Component {
                 <div>
                     <a style={styles.text} target="_blank" href={tweetLink}>{this.props.tweet.text}</a>
                 </div>
-                <Date createdAt={this.props.tweet.created_at}/>
-                <div style={styles.retweets}>
-                    RT {this.props.tweet.retweet_count}
-                    {/*<button*/}
-                        {/*type='button'*/}
-                        {/*style={styles.retweet}*/}
-                        {/*onClick={this.showRetweetsModal}>*/}
-                        {/*RT {this.props.tweet.retweet_count}*/}
-                    {/*</button>*/}
-
+                <div style={styles.footer}>
+                    <a
+                        style={styles.retweet}
+                        onClick={this.showRetweetsModal}>
+                        RT {this.props.tweet.retweet_count}
+                    </a>
+                    <Date style={styles.date} createdAt={this.props.tweet.created_at}/>
                 </div>
                 {this.state.retweetModalIsOpen &&
                 <Retweets

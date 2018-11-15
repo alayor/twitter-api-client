@@ -7,6 +7,7 @@ export const styles = {
         left: '0',
         border: '15px solid #F5F5F5',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        fontFamily: 'sans-serif'
     },
 }
