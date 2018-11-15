@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import { styles } from './styles'
 import Header from './components/Header'
 import Tweets from './components/Tweets'
-import { styles as tweetStyles } from './components/Tweets/components/TweetsColumn/components/Tweet/styles'
 
 class Main extends Component {
     constructor(props){
@@ -19,13 +18,13 @@ class Main extends Component {
     }
     switchNightMode = () => {
         if (this.state.nightMode) {
-            tweetStyles.container = {
-                ...tweetStyles.container,
+            styles.container = {
+                ...styles.container,
                 filter: 'none'
             }
         } else {
-            tweetStyles.container = {
-                ...tweetStyles.container,
+            styles.container = {
+                ...styles.container,
                 filter: 'invert(100%)'
             }
         }
