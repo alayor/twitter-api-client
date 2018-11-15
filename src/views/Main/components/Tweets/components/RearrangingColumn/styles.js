@@ -11,6 +11,7 @@ export const styles = {
         'textAlign': 'center',
         'verticalAlign': 'middle',
         lineHeight: '90px',
-        borderRadius: '15px'
+        borderRadius: '15px',
+        fontSize: '1.4em'
     }
 }

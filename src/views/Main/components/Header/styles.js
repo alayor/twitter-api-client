@@ -13,4 +13,8 @@ export const styles = {
         flex: '10%',
         cursor: 'pointer'
     },
+    done: {
+        fontWeight: 'bold',
+        fontSize: '1.2em'
+    },
 }

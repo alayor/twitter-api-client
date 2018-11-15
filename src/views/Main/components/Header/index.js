@@ -10,7 +10,9 @@ class Header extends Component {
                     {this.props.nightMode ? 'Day' : 'Night'}
                 </button>
                 <button style={styles.edit} type="button" onClick={this.props.switchRearranging}>
-                    {this.props.isRearranging ? 'Done' : 'Rearrange Columns'}
+                    {this.props.isRearranging ?
+                        <span style={styles.done}>Done</span> :
+                        <span>Rearrange Columns</span>}
                 </button>
             </div>
         );
