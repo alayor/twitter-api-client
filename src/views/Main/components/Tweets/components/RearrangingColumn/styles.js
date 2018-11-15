@@ -7,6 +7,10 @@ export const styles = {
         color: 'white',
         border: 'dotted white 3px',
         padding: '1em',
-        margin: '0.5em'
+        margin: '0.5em',
+        cursor: 'grab',
+        'textAlign': 'center',
+        'verticalAlign': 'middle',
+        lineHeight: '90px'
     }
 }
