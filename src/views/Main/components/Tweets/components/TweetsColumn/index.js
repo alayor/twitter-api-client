@@ -13,7 +13,10 @@ class TweetsColumn extends Component {
                     editing={false}
                     onButtonClick={this.props.switch(this.props.user)}/></div>
                 <div style={styles.tweets}>
-                    {this.props.tweets.map(t => <Tweet key={t.id_str} tweet={t}/>)}
+                    {this.props.tweets.length ?
+                        this.props.tweets.map(t => <Tweet key={t.id_str} tweet={t}/>) :
+                        'No results.'
+                    }
                 </div>
             </div>
         );
