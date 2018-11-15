@@ -4,7 +4,7 @@ import {styles} from './styles'
 import TweetsColumn from './components/TweetsColumn'
 import EditColumn from './components/EditColumn'
 import RearrangingColumn from './components/RearrangingColumn'
-import {getTweets} from "services/twitterClient"
+import {getTweets, getUserInfo} from "services/twitterClient"
 
 class Tweets extends Component {
     constructor(props) {
@@ -22,11 +22,13 @@ class Tweets extends Component {
 
     updateTweets = async (user) => {
         const tweets = await getTweets(user)
+        const info = await getUserInfo(user)
         this.setState({
             users: {
                 ...this.state.users,
                 [user]: {
-                    tweets
+                    tweets,
+                    info: !!info && info.length ? info[0] : {}
                 }
             }
         })
@@ -66,12 +68,15 @@ class Tweets extends Component {
                                 return
                             }
                             if (this.props.isRearranging) {
-                                return <RearrangingColumn swap={this.swap} key={user} user={user}/>
+                                return <RearrangingColumn swap={this.swap} key={user} user={user}
+                                                          info={this.state.users[user].info}/>
                             }
                             return this.state.columnsEditing[user] ?
-                                <EditColumn key={user} switch={this.switch} user={user}/> :
+                                <EditColumn key={user} switch={this.switch} user={user}
+                                            info={this.state.users[user].info}/> :
                                 <TweetsColumn key={user} switch={this.switch} user={user}
-                                              tweets={this.state.users[user].tweets}/>
+                                              tweets={this.state.users[user].tweets}
+                                info={this.state.users[user].info}/>
                         }
                     )
                 }

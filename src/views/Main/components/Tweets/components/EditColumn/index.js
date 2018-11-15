@@ -39,6 +39,7 @@ class EditColumn extends Component {
                     editing={true}
                     user={this.props.user}
                     onButtonClick={this.onSave}
+                    info={this.props.info}
                 />
                 <div style={styles.form}>
                     <NumberOfTweets

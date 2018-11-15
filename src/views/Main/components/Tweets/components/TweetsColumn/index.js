@@ -11,7 +11,8 @@ class TweetsColumn extends Component {
                     user={this.props.user}
                     switch={this.props.switch}
                     editing={false}
-                    onButtonClick={this.props.switch(this.props.user)}/></div>
+                    onButtonClick={this.props.switch(this.props.user)}
+                    info={this.props.info}/></div>
                 <div style={styles.tweets}>
                     {this.props.tweets.length ?
                         this.props.tweets.map(t => <Tweet key={t.id_str} tweet={t}/>) :

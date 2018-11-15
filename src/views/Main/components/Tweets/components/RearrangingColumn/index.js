@@ -40,6 +40,7 @@ class RearrangingColumn extends Component {
                  onDragOver={this.allowDrop}
                  onDragEnd={e => this.onDragEnd(e)}>
                 <div><ColumnHeader
+                    info={this.props.info}
                     user={this.props.user}
                     switch={this.props.switch}
                     editing={false}/></div>
