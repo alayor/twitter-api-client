@@ -3,8 +3,7 @@ export const styles = {
         flex: '15%',
         display: 'flex',
         textAlign: 'center',
-        background: '#25aa3d',
-        marginBottom: '1em'
+        borderBottom: '3px solid black'
     },
     image: {
         flex: '20%',
@@ -12,11 +11,13 @@ export const styles = {
     },
     title: {
         flex: '60%',
-        padding: '0.5em'
+        padding: '0.5em',
+        fontSize: '1.4em'
     },
     edit: {
         flex: '20%',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        margin: '1em'
     },
     save: {
         fontWeight: 'bold',

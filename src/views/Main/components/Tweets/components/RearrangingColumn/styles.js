@@ -10,6 +10,7 @@ export const styles = {
         cursor: 'move',
         'textAlign': 'center',
         'verticalAlign': 'middle',
-        lineHeight: '90px'
+        lineHeight: '90px',
+        borderRadius: '15px'
     }
 }

@@ -6,7 +6,7 @@ export const styles = {
         padding: '1em',
         overflowY: 'scroll',
         margin: '0.5em',
-
+        borderRadius: '15px'
     },
     form: {
         display: 'flex',
