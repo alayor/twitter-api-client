@@ -1,9 +1,8 @@
 export const styles = {
     container: {
         flex: '75%',
-        background: 'black',
-        color: 'white',
-        border: 'solid white 1px',
+        background: '#E5E5E5',
+        border: 'solid black 2px',
         padding: '1em',
         overflowY: 'scroll',
         margin: '0.5em'
