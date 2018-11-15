@@ -15,18 +15,21 @@ class Tweet extends Component {
     render() {
         const tweetLink = twitterClient.getTweetLink(this.props.tweet.user.id, this.props.tweet.id_str)
         return (
-            <div style={styles.container}>
-                <div>
-                    <a style={styles.text} target="_blank" href={tweetLink}>{this.props.tweet.text}</a>
-                </div>
-                <div style={styles.footer}>
-                    <a style={styles.retweet}
-                       onMouseEnter={() => this.setState({showRetweeters: true})}
-                       onMouseLeave={() => this.setState({showRetweeters: false})}
-                       onClick={this.showRetweetsModal}>
-                        RT {this.props.tweet.retweet_count}
-                    </a>
-                    <Date style={styles.date} createdAt={this.props.tweet.created_at}/>
+            <div>
+                <div style={styles.tweet}>
+                    <div>
+                        <a style={styles.text} target="_blank" href={tweetLink}>{this.props.tweet.text}</a>
+                    </div>
+                    <div style={styles.footer}>
+                        <a style={styles.retweet}
+                           onMouseEnter={() => this.setState({showRetweeters: true})}
+                           onMouseLeave={() => this.setState({showRetweeters: false})}
+                           onClick={this.showRetweetsModal}>
+                            RT {this.props.tweet.retweet_count}
+                        </a>
+                        <Date style={styles.date} createdAt={this.props.tweet.created_at}/>
+                    </div>
+
                 </div>
                 {this.state.showRetweeters &&
                 <Retweets

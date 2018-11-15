@@ -1,5 +1,8 @@
 export const styles = {
     container: {
+
+    },
+    tweet: {
         display: 'flex',
         flexDirection: 'column',
         flex: '75%',

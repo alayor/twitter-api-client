@@ -1,5 +1,6 @@
 import React from 'react'
 import * as twitterClient from 'services/twitterClient'
+import { styles } from './styles'
 
 class Retweets extends React.Component {
     constructor() {
@@ -16,8 +17,10 @@ class Retweets extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.state.retweeters.map(r => r.screen_name + ', ')}
+            <div style={styles.container}>
+                {this.state.retweeters.map(r => {
+                    return <div key={r}>{r.name} ({r.screen_name})</div>
+                })}
             </div>
         )
     }

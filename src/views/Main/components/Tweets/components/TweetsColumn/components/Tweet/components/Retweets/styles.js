@@ -1,12 +1,10 @@
 export const styles = {
-    modal: {
-        content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)'
-        },
+    container: {
+        display: 'inline-block',
+        position: 'absolute',
+        zIndex: '10',
+        background: 'grey',
+        padding: '0.5em',
+        color: 'white'
     }
 }
