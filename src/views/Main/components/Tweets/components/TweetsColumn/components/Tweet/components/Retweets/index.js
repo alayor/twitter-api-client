@@ -16,11 +16,16 @@ class Retweets extends React.Component {
     }
 
     render() {
+        if (!this.state.retweeters || !this.state.retweeters.length) {
+            return <div />
+        }
         return (
             <div style={styles.container}>
-                {this.state.retweeters.map(r => {
-                    return <div key={r}>{r.name} ({r.screen_name})</div>
-                })}
+                <div style={styles.usernames}>
+                    {this.state.retweeters.map(r => {
+                        return <div key={r}>{r.name} ({r.screen_name})</div>
+                    })}
+                </div>
             </div>
         )
     }

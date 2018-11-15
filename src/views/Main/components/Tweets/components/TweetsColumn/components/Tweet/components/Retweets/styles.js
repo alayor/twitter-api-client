@@ -1,5 +1,8 @@
 export const styles = {
     container: {
+
+    },
+    usernames: {
         display: 'inline-block',
         position: 'absolute',
         zIndex: '10',
