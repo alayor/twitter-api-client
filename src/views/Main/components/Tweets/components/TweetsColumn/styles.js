@@ -5,7 +5,8 @@ export const styles = {
         flex: '75%',
         background: '#E5E5E5',
         border: 'solid black 2px',
-        padding: '1em',
+        paddingLeft: '1em',
+        paddingRight: '1em',
         margin: '0.5em',
         borderRadius: '15px'
     },

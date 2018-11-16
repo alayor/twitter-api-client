@@ -7,17 +7,19 @@ export const styles = {
     },
     image: {
         flex: '20%',
-        padding: '0.5em'
+        padding: '0.5em',
+        borderRadius: '50%'
     },
     title: {
         flex: '60%',
         padding: '0.5em',
+        paddingTop: '0.9em',
         fontSize: '1.4em'
     },
     edit: {
         flex: '20%',
         cursor: 'pointer',
-        margin: '1em'
+        margin: '1.5em',
     },
     save: {
         fontWeight: 'bold',
