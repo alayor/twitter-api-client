@@ -12,6 +12,21 @@ class Tweet extends Component {
         }
     }
 
+    startRetweetersSearching = () => {
+        styles.retweet = {
+            ...styles.retweet,
+            cursor: 'wait'
+        }
+    }
+
+    stopRetweetersSearching = () => {
+        debugger
+        styles.retweet = {
+            ...styles.retweet,
+            cursor: 'default'
+        }
+    }
+
     render() {
         const tweetLink = twitterClient.getTweetLink(this.props.tweet.user.id, this.props.tweet.id_str)
         return (
@@ -33,6 +48,8 @@ class Tweet extends Component {
                 </div>
                 {this.state.showRetweeters &&
                 <Retweets
+                    startSearching={this.startRetweetersSearching}
+                    stopSearching={this.stopRetweetersSearching}
                     tweetId={this.props.tweet.id_str}
                 />}
             </div>

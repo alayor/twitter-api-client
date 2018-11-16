@@ -29,7 +29,7 @@ export const styles = {
         marginTop: '.6em',
         fontSize: '.8em',
         fontFamily: 'serif',
-        cursor: 'context-menu'
+        cursor: 'default'
     }
 
 }

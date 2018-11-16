@@ -3,7 +3,6 @@ import {styles} from './styles'
 
 class Header extends Component {
     render() {
-        debugger
         return (
             <div style={styles.container}>
                 <img style={styles.image} src={this.props.info.profile_image_url}/>

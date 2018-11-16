@@ -11,8 +11,10 @@ class Retweets extends React.Component {
     }
 
     async componentDidMount() {
+        this.props.startSearching()
         const retweeters = await twitterClient.getRetweeters(this.props.tweetId)
         this.setState({retweeters})
+        this.props.stopSearching()
     }
 
     render() {
