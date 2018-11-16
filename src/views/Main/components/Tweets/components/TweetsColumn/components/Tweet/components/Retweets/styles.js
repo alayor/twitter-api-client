@@ -3,8 +3,8 @@ export const styles = {
 
     },
     usernames: {
-        border: '1px solid #00000',
-        borderRadius: '25px',
+        border: '3px solid #00000',
+        borderRadius: '15px',
         display: 'inline-block',
         position: 'absolute',
         zIndex: '10',

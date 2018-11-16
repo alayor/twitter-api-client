@@ -20,7 +20,7 @@ class Retweets extends React.Component {
             return <div />
         }
         return (
-            <div style={styles.container}>
+            <div style={{...styles.container, border: '3px solid #00000'}}>
                 <div style={styles.usernames}>
                     {this.state.retweeters.slice(0, 5).map(r => {
                         return <div key={r} style={styles.retweeter}>
