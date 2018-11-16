@@ -6,9 +6,14 @@ export const styles = {
         borderBottom: '3px solid black'
     },
     image: {
-        flex: '20%',
         padding: '0.5em',
-        borderRadius: '50%'
+        marginTop: '0.5em',
+        width: '2em',
+        height: '1.5em',
+        borderRadius: '50%',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '50% 50%'
     },
     title: {
         flex: '60%',
