@@ -11,10 +11,8 @@ class Retweets extends React.Component {
     }
 
     async componentDidMount() {
-        this.props.startSearching()
         const retweeters = await twitterClient.getRetweeters(this.props.tweetId)
         this.setState({retweeters})
-        this.props.stopSearching()
     }
 
     render() {
@@ -24,9 +22,12 @@ class Retweets extends React.Component {
         return (
             <div style={styles.container}>
                 <div style={styles.usernames}>
-                    {this.state.retweeters.map(r => {
-                        return <div key={r}>{r.name} ({r.screen_name})</div>
+                    {this.state.retweeters.slice(0, 5).map(r => {
+                        return <div key={r} style={styles.retweeter}>
+                            {r.name} ({r.screen_name})
+                        </div>
                     })}
+                    {this.state.retweeters.length > 5 && 'More...'}
                 </div>
             </div>
         )

@@ -20,7 +20,6 @@ class Tweet extends Component {
     }
 
     stopRetweetersSearching = () => {
-        debugger
         styles.retweet = {
             ...styles.retweet,
             cursor: 'default'

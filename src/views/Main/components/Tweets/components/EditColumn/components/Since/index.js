@@ -3,7 +3,6 @@ import {styles} from './styles'
 
 class Since extends Component {
     render() {
-        debugger
         return (
             <div style={styles.container}>
                 <form>

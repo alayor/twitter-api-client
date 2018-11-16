@@ -3,11 +3,19 @@ export const styles = {
 
     },
     usernames: {
+        border: '1px solid #00000',
+        borderRadius: '25px',
         display: 'inline-block',
         position: 'absolute',
         zIndex: '10',
-        background: 'grey',
+        background: '#C5C5C5',
         padding: '0.5em',
-        color: 'white'
+        color: 'black'
+    },
+    retweeter: {
+        borderBottom: ' 1px solid #000000',
+        paddingBottom: '0.5em',
+        paddingLeft: '0.5em',
+        marginBottom: '1em',
     }
 }
