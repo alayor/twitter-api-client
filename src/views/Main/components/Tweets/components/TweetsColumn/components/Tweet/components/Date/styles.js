@@ -1,7 +1,8 @@
 export const styles = {
     container: {
-        marginTop: '.5em',
+        marginTop: '.6em',
         textAlign: 'right',
-        fontStyle: 'italic'
+        fontStyle: 'italic',
+        fontSize: '.8em'
     },
 }
